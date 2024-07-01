@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+	<section class="home-banner-area relative" id="home" style="height: 1200px">
+	<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row fullscreen align-items-end justify-content-center">
+				<div class="banner-content col-lg-6 col-md-6">
+					<h1 style="margin-top: 100px">Hostel Registration</h1>4
+					<div class="search-field" style="margin-top: 100px">
+						<form class="search-form" method="post"  enctype="multipart/form-data">
+							<div class="row">
+                                    {% csrf_token %}
+								<labet4l for="name">Name of Hostel</labet4l>
+
+					           <input id="name" class="form-control" style="" name="name" required>
+								<labet4l for="email">Email Id</labet4l>
+								<input id="email" type="email" class="form-control" style="" name="email">
+                                <label for="addt4ress">Address</label>
+                                <textarea id="address" class="form-control" style="" name="address" required ></textarea>
+                                <label for="conta4ct">Phone Number</label>
+								<input id="contact" class="form-control" style="" name="phone" required>
+
+                                <label for="conta4ct">Name of Owner</label>
+								<input id="contact" class="form-control" style="" name="owner" required>
+                                <label for="conta4ct">Image</label>
+								<input type="file" id="contact" class="form-control" style="" name="image" required>
+                                <label for="con4tact">Hostel Category</label>
+    <select style="width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;" name="categoy" id="prisonerNumber" required>
+                      <option value="">Select Hostel Category</option>
+                                             <option value="Ladies">Ladies</option>
+		                                             <option value="Gents">Gents</option>
+
+
+	</select>
+
+
+
+
+								<label for="con4tact">Rent</label>
+    								<input id="username" class="form-control" style="" name="rent" required>
+								<label for="username">Password</label>
+								<input id="password" class="form-control" style="" name="password" required>
+                                <label for="confirm_password"> Confirm Password</label>
+								<input id="confirm_password" class="form-control" style="" name="password" onchange='check();' required>
+                                <span id='message'></span>
+								<input  style="margin-top: 20px" type="submit" value="Register">
+
+ 							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <script>
+   var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+      document.getElementById('confirm_password').value = "";
+    document.getElementById('message').innerHTML = 'not matching';
+      alert("Re enter Password correctly")
+  }
+}
+    </script>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+

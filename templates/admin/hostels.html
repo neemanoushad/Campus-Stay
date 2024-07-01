@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner">
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+<h1>Hostels List</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="success">Hostel Name</th>
+<th class="success">Email</th>
+<th class="success">Contact Number</th>
+<th class="success">Address</th>
+<th class="success">Remove</th>
+{% for hos in hostel  %}
+
+<tr>
+    <td>{{ hos.user.first_name}}</td>
+    <td>{{ hos.user.email}}</td>
+    <td>{{ hos.contact}}</td>
+    <td>{{ hos.address}}</td>
+    <td><a href="reject?id={{ hos.user_id}}" class=" btn btn-danger">Remove</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+{% endblock %}

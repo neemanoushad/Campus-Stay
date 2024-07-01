@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section class="home-banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row fullscreen align-items-end justify-content-center">
+				<div class="banner-content col-lg-12 col-md-12">
+					<h1>We’re Real Hostel King</h1>
+					<div class="search-field">
+						<form class="search-form" method="post">
+                        {% csrf_token %}
+							<div class="row">
+								<div class="col-lg-12 d-flex align-items-center justify-content-center toggle-wrap">
+									<div class="row">
+										<div class="col">
+											<h4 class="search-title">LOGIN HERE  !!!!!</h4>
+										</div>
+										<div class="col">
+
+										</div>
+									</div>
+								</div>
+								<div class=" col-md-6 col-xs-6">
+									<input type="text" class="app-select form-control" name="email" placeholder="Email" required>
+								</div>
+								<div class=" col-md-6 col-xs-6">
+									<input type="password" class="app-select form-control" name="password" placeholder="Password" required>
+								</div>
+
+								<div class="col-lg-7 d-flex justify-content-end">
+									<button class="primary-btn">Sign in<span class="lnr lnr-arrow-right"></span></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

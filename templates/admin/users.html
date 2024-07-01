@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner" >
+<h1>Users List</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="success">Student/Parent Name</th>
+<th class="success">Email</th>
+<th class="success">Contact Number</th>
+<th class="success">Address</th>
+<th class="success">College</th>
+<th class="success">Course</th>
+<th class="success">Remove</th>
+{% for i in student  %}
+
+<tr>
+    <td>{{ i.user.first_name}}</td>
+    <td>{{ i.user.email}}</td>
+    <td>{{ i.contact}}</td>
+    <td>{{ student.address}}</td>
+    <td>{{ student.college}}</td>
+    <td>{{ student.course}}</td>
+    <td><a href="reject?id={{ student.user_id}}" class=" btn btn-danger">Remove</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+
+{% endblock %}

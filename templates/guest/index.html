@@ -1,0 +1,58 @@
+{% extends 'guest/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="home-banner-area relative" id="home" style="background-image: url({% static 'img/banner-bg.jpg' %}" )>
+		<div class="overlay overlay-bg"></div>
+
+		<div class="container">
+
+			<div class="row fullscreen align-items-end justify-content-center">
+				<div class="banner-content col-lg-12 col-md-12">
+
+                <h1 style="margin-top: -350px">Hostel Management </h1>
+				</div>
+			</div>
+		</div>
+
+	</section>
+     {% if message %}
+         <script> alert("{{ message }}")</script>
+     {% endif %}
+
+    <!-- <section class="about-area">
+		<div class="container-fluid">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-6 about-left">
+					<div class="single-about">
+						<h4>Why Choose Us</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad.
+						</p>
+					</div>
+					<div class="single-about">
+						<h4>Our Hostels</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad.
+						</p>
+					</div>
+					<div class="single-about">
+						<h4>legal notice</h4>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							Ut enim ad.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6 about-right no-padding">
+                    {% load static %}
+					<img class="img-fluid" src="{% static 'img/about-img-h.jpg' %}" alt="">
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+{% endblock %}
+

@@ -1,0 +1,122 @@
+{% extends 'hostel/base.html' %}
+{% block content %}
+{% load static %}
+
+<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex text-center align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<p class="text-white link-nav"><a href="">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="">
+							At</a></p>
+					<h1 class="text-white">
+						ATTENDANCE MARKING
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div id="page-inner" style="width:70%;margin-left:200px;margin-right:200px;margin-top:100px" align="center">
+
+<table class="table table-bordered table-striped table-hover">
+
+<th class="success">Student</th>
+
+<th class="success">Attendance</th>
+
+{% for h in feed  %}
+
+<tr>
+    <td>{{ h.user.first_name}}</td>
+    
+ 
+    <td>
+        <a href="SetAttedance?stus={{ h.id }}&st=Present" class=""><img width="50px" src="{% static 'img/images.png' %}"></a>Present
+    
+   
+        <a href="SetAttedance?stus={{ h.id }}&st=Absent" class=""><img width="50px" src="{% static 'img/images1.png' %}"></a>Absent
+    </td>
+    
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+
+{% endblock %}
+
+{% comment %} 
+{% extends 'hostel/base.html' %}
+{% block content %}
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex text-center align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<p class="text-white link-nav"><a href="">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="">
+							At</a></p>
+					<h1 class="text-white">
+						ATTENDANCE MARKING
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+	<!-- Start About Area -->
+	<section class="about-area section-gap bg-white">
+		<div class="container">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-6">
+					<div class="single-about">
+                        <h1>ADD</h1>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                         <table class="table">
+                         
+                         
+                            <tr><td><b>Select Student:<label style="color:red;">*</label></b></td><td>
+                            
+                             <select required name="stu" class="form-control" >
+                                           <option value="">--Select--</option>
+                                           {% for h in h  %}
+                                           <option value="{{ h.student.id }}">{{ h.student.user.first_name }}</option>
+                                           {% endfor %}
+                                       </select>
+                            
+                            </td></tr>
+
+                            <tr><td><b>Select Status:<label style="color:red;">*</label></b></td><td>
+                            
+                             <select required name="st" class="form-control" >
+                                           <option value="">--Select--</option>
+                                           <option value="Present">Present</option>
+                                           <option value="Absent">Absent</option>
+                                           
+                                       </select>
+                            
+                            </td></tr>
+                            
+                            
+                            
+                            <tr><td><button style="margin-top: 20px;margin-left: 200px" type="submit" class="btn btn-info">Add Attendance</button></td></tr>
+                        </table>
+                           
+                            
+                        </form>
+                    
+					</div>
+				</div>
+				<div class="col-lg-6 about-right no-padding">
+					<img class="img-fluid" src="{{ ward.hostal.image.url }}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+
+     {% endcomment %}
+   
+{% comment %} {% endblock %} {% endcomment %}

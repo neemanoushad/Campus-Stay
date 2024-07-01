@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner" style="background-image: url({% static 'assets/img/admin.jpg' %});background-repeat: no-repeat">
+
+        </div>
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+{% endblock %}

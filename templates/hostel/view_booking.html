@@ -1,0 +1,57 @@
+ {% extends 'hostel/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+ <h1 align="left" class="title-single">VIEW STUDENT</h1>
+
+ <table class="table table-bordered table-striped table-hover" style="background-color: #002633;margin-top:50px">
+
+
+
+                                <th class="success" style="color: white;">student Name</th>
+
+
+                                      <th class="success" style="color: white;">Contact</th>
+
+
+
+                                           <th class="success" style="color: white;">Address</th>
+
+                                      <th class="success" style="color: white;">Email</th>
+                                   <th class="success" style="color: white;">Allocate</th>
+
+              {% for i in feed %}
+                                <tr style="background-color:white;width: 700px;">
+
+
+                                    <tr style="background-color:white;width: 700px;">
+
+                                    <td>{{ i.user.first_name }}</td>
+
+                                    <td>{{ i.contact }}</td>
+
+                                              <td>{{ i.address }}</td>
+                                              <td>{{ i.user.email }}</td>
+
+                                    <td><button style="background-color:limegreen"><a href="Allocate_Room?id={{ i.id}}" >Allocate</a></button></td>
+
+                                </tr>
+
+
+
+
+
+
+
+
+              {% endfor %}
+
+ </table>
+
+
+  {% endblock %}

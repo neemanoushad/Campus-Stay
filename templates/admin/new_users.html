@@ -1,0 +1,34 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+{% load static %}
+{#    <h1>Admin Dashboard</h1>#}
+<div id="page-inner" >
+<h1>New User Registration</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="info">Student/Parent Name</th>
+<th class="info">Email</th>
+<th class="info">Contact Number</th>
+<th class="info">Address</th>
+<th class="info">College</th>
+<th class="info">Course</th>
+<th class="info">Approve</th>
+<th class="info">Reject</th>
+{% for i in new  %}
+
+<tr>
+    <td>{{ i.user.first_name}}</td>
+    <td>{{ student.user.email}}</td>
+    <td>{{ student.contact}}</td>
+    <td>{{ student.guest_category}}</td>
+    <td>{{ student.college}}</td>
+    <td>{{ student.course}}</td>
+    <td><a href="approve?id={{ student.user_id}}" class=" btn btn-success">Approve</a></td>
+    <td><a href="reject?id={{ student.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+{% endblock %}

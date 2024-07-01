@@ -1,0 +1,52 @@
+{% extends 'hostel/base.html' %}
+{% block content %}
+{% load static %}
+<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex text-center align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<p class="text-white link-nav"><a href="">Home </a> <span class="lnr lnr-arrow-right"></span> <a href="">
+							Apply</a></p>
+					<h1 class="text-white">
+						APPLICATION LIST
+					</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+<div id="page-inner"  style="width:70%;margin-left:200px;margin-right:200px;margin-top:100px">
+<h1>Apply List</h1>
+<table class="table table-bordered table-striped table-hover">
+
+<th class="info">Student Details</th>
+<th class="info">Leave From</th>
+<th class="info">Leave Till</th>
+
+<th class="info">Reason</th>
+<th class="info">Action</th>
+
+
+{% for m in m  %}
+
+<tr>
+    
+    <td>{{ m.student.user.first_name }}<br>
+    {{ m.student.contact }}<br>
+    {{ m.student.user.email }}
+    </td>
+    <td>{{ m.leave_from }}</td>
+
+    <td>{{ m.leave_till }}</td>
+    <td>{{ m.reason}}</td>
+    <td><a href="allowLeave?id={{ m.id}}" class=" btn btn-success">Approve</a>
+    <a href="DisallowLeave?id={{ m.id}}" class=" btn btn-danger">Reject</a></td>
+
+    
+
+</tr>
+
+    {% endfor %}
+</table>
+        </div>
+{% endblock %}
